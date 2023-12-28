@@ -11,6 +11,7 @@ typedef struct
 }Stack;
 
 
+// Yeni bir stack yapisi olusturur ve olusturulan stack'i geri dondurur.
 Stack* createStack()
 {
     Stack* stack = (Stack*)malloc(sizeof(Stack*));

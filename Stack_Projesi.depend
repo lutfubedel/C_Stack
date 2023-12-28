@@ -46,3 +46,18 @@
 
 1703172943 c:\users\ltfmu\onedrive\masaüstü\Üniversite\2.sýnýf\1.dönem\veri yapýlarý\odev\stack uygulamasý\struct_projesi\pop_stack.h
 
+1703757760 source:d:\github repo\c_stack\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"create_stack.h"
+	"push_stack.h"
+	"pop_stack.h"
+
+1703756822 d:\github repo\c_stack\create_stack.h
+
+1703757016 d:\github repo\c_stack\push_stack.h
+
+1703757351 d:\github repo\c_stack\pop_stack.h
+

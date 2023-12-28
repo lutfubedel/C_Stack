@@ -16,6 +16,7 @@ int main()
     char text[1000];
     Stack *myStack = createStack();
 
+    // Kullanicidan parantezler alinir.
     printf("Parantezleri giriniz : ");
     scanf("%s",text);
 
@@ -32,57 +33,68 @@ int main()
 }
 
 
-bool balanced(Stack* myStack,char text[])
+// Parantezlerin dengeli olup olmadigini kontrol eden fonksiyon
+bool balanced(Stack* myStack, char text[])
 {
-    for(int i=0; i < strlen(text); i++)
+    // Her bir parantezi kontrol eden dongu
+    for (int i = 0; i < strlen(text); i++)
     {
-        if((text[i] == ')'))
+        // Kapali parantez kontrolu
+        if (text[i] == ')')
         {
+            // Stack bos ise dengeli degildir.
             if (myStack->counter == 0)
             {
                 return false;
             }
             else
             {
-                if(myStack->top->data == '(')
+                // Stack'de acik parantez bulursa acik parantezi stack'den cikarir.
+                if (myStack->top->data == '(')
                     popStack(myStack);
                 else
                     return false;
             }
         }
-
-        else if((text[i] == '}'))
+        // Kapali suslu parantez kontrolu
+        else if (text[i] == '}')
         {
+            // Stack bos ise dengeli degil
             if (myStack->counter == 0)
             {
                 return false;
             }
             else
             {
-                if(myStack->top->data == '{')
+                //Stack'de acik suslu parantez bulursa acik suslu parantezi stack'den cikarir.
+                if (myStack->top->data == '{')
                     popStack(myStack);
                 else
                     return false;
             }
-
         }
-
-        else if((text[i]=='(') || (text[i]=='{'))
+        // Acik parantez veya suslu parantez ise stack'e ekleme
+        else if ((text[i] == '(') || (text[i] == '{'))
         {
-            pushStack(myStack,text[i]);
+            pushStack(myStack, text[i]);
         }
+
         else
         {
-
+            // Diger karakterler icin herhangi bir islem yapma
         }
     }
 
-    if((myStack->counter) == 0)
+    // Stack bos ise parantezler dengeli
+    if (myStack->counter == 0)
     {
         return true;
     }
-
-
+    // Stack bos degilse parantezler dengeli degildir.
+    else
+    {
+        return false;
+    }
 }
 
 
